@@ -427,8 +427,7 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context
-                                                  .pushNamed('HomePageDelete');
+                                              context.pushNamed('HomePage');
                                             },
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,

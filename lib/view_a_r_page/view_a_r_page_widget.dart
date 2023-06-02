@@ -45,25 +45,28 @@ class _ViewARPageWidgetState extends State<ViewARPageWidget> {
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 1.0,
-                height: MediaQuery.of(context).size.height * 0.92,
-                child: custom_widgets.ArView(
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          body: SafeArea(
+            top: true,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
                   width: MediaQuery.of(context).size.width * 1.0,
                   height: MediaQuery.of(context).size.height * 0.92,
-                  image: widget.image!,
-                  buyButtonOnClick: () async {},
+                  child: custom_widgets.ArView(
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 0.92,
+                    image: widget.image!,
+                    buyButtonOnClick: () async {},
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
