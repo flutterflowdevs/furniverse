@@ -1,4 +1,4 @@
-package com.mycompany.furniverse
+package com.flutterflowdevs.furniverse
 
 import io.flutter.embedding.android.FlutterActivity
 
